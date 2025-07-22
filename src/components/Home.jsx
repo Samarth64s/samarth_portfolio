@@ -52,10 +52,10 @@ const statsData = [
 
 const Home = () => {
   return (
-    <div className="h-screen flex justify-center items-start bg-gray-900">
+    <div className=" flex justify-center items-start bg-gray-900">
       <div className="h-auto flex flex-col w-full">
         {/* ==================== Top Section (Intro & Image) ==================== */}
-        <section className="flex-1 py-[61px] flex items-center justify-center bg-gray-900 text-white mb-4">
+        <section className="py-[61px] flex items-center justify-center bg-gray-900 text-white mb-4">
           <div className="flex flex-col-reverse lg:flex-row items-center justify-between px-6 mx-auto max-w-[900px] lg:max-w-[1170px] w-full">
             {/* -------------------- Left Section (Text) -------------------- */}
             <div className="max-w-xl text-center lg:text-left mt-10">
