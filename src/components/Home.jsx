@@ -5,6 +5,7 @@ import CountUp from "react-countup";
 
 // ==================== Dynamic Data ====================
 
+// Profile information
 const homeInfo = {
   position: "Frontend Developer / Game Developer",
   name: "Samarth Malviya",
@@ -13,6 +14,7 @@ const homeInfo = {
   profileImage: profileImage,
 };
 
+// Download CV Button
 const buttons = [
   {
     text: "Download CV",
@@ -22,6 +24,7 @@ const buttons = [
   },
 ];
 
+// Social Media Links
 const socialLinks = [
   { icon: <FaGithub />, href: "https://github.com/", name: "GitHub" },
   { icon: <FaLinkedin />, href: "https://linkedin.com/", name: "LinkedIn" },
@@ -29,6 +32,7 @@ const socialLinks = [
   { icon: <FaYoutube />, href: "https://youtube.com/", name: "YouTube" },
 ];
 
+// Stats Section Data
 const statsData = [
   { end: 1.5, text: "Years of Experience", decimals: 1 },
   { end: 15, text: "Projects Completed" },
@@ -36,27 +40,29 @@ const statsData = [
   { end: 100, text: "Code Commits" },
 ];
 
-// ==================== Component ====================
+// ==================== Main Home Component ====================
 
 const Home = () => {
   return (
     <div className="h-auto flex flex-col bg-gray-900">
-      {/* Top Section */}
-      <section className="flex-1 py-20 flex items-center justify-center bg-gray-900 text-white mb-4 md:mb-0">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-8 mx-auto md:max-w-[900px] lg:max-w-[1170px] w-full">
-          {/* Left Content */}
-          <div className="max-w-xl text-center md:text-left mt-10 md:mt-0">
-            <p className="text-gray-400 text-xl md:text-2xl">
-              {homeInfo.position}
-            </p>
-            <h1 className="text-5xl md:text-7xl font-bold mt-4">
-              Hello I'm <span className="text-green-400">{homeInfo.name}</span>
+      {/* ==================== Top Section (Intro & Image) ==================== */}
+      <section className="flex-1 py-[61px] flex items-center justify-center bg-gray-900 text-white mb-4">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between px-6 mx-auto max-w-[900px] lg:max-w-[1170px] w-full">
+          {/* -------------------- Left Section (Text) -------------------- */}
+          <div className="max-w-xl text-center mt-10">
+            <p className="text-gray-400 text-xl">{homeInfo.position}</p>
+            <h1 className="text-5xl font-bold mt-4">
+              Hello I'm{" "}
+              <span className="text-6xl font-audiowide text-green-400">
+                {homeInfo.name}
+              </span>
             </h1>
             <p className="mt-6 text-gray-400 leading-relaxed">
               {homeInfo.about}
             </p>
 
-            <div className="mt-8 flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4">
+            {/* Download Button & Social Media Links */}
+            <div className="mt-8 flex flex-col lg:flex-row items-center lg:items-start space-y-4 lg:space-y-0 lg:space-x-4">
               {buttons.map((btn, index) => (
                 <a href={btn.href} key={index} className={btn.className}>
                   {btn.text}
@@ -79,18 +85,40 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="relative w-[250px] md:w-[400px] aspect-square rounded-full border-4 border-dashed border-green-400 flex items-center justify-center">
+          {/* -------------------- Right Section (Profile Image with Rotating Border) -------------------- */}
+          <div className="relative w-[250px] lg:w-[390px] aspect-square flex items-center justify-center mt-10">
+            {/* Rotating Dashed Circle Border */}
+            <svg
+              className="absolute w-full h-full animate-spin-slow"
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="48"
+                stroke="#4ade80"
+                strokeWidth="1"
+                fill="none"
+                strokeDasharray="20 20"
+                strokeLinecap="round"
+                transform="rotate(-90 50 50)"
+              />
+            </svg>
+
+            {/* Inner Circle Mask to Cover the Dashed Border Center */}
+            <div className="absolute w-[235px] lg:w-[370px] aspect-square bg-gray-900 rounded-full z-10"></div>
+
+            {/* Profile Image */}
             <img
               src={homeInfo.profileImage}
               alt="profile"
-              className="w-[240px] md:w-[390px] aspect-square rounded-full object-cover"
+              className="w-[235px] lg:w-[370px] aspect-square rounded-full object-cover z-20"
             />
           </div>
         </div>
       </section>
 
-      {/* Bottom Stats Section */}
+      {/* ==================== Bottom Section (Stats) ==================== */}
       <section className="flex-none bg-gray-800 text-white py-6">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4 px-6 xl:px-0 mx-auto md:max-w-[900px] lg:max-w-[1170px]">
           {statsData.map((item, index) => (
