@@ -7,10 +7,10 @@ import CountUp from "react-countup";
 
 // Profile information
 const homeInfo = {
-  position: "Frontend Developer / Game Developer",
+  position: "Frontend Developer (React.js) & Game Developer (Unity)",
   name: "Samarth Malviya",
   about:
-    "I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.",
+    "I specialize in crafting elegant digital experiences through modern web development with React.js and game development with Unity. I am proficient in a range of technologies and committed to delivering high-quality, engaging user experiences.",
   profileImage: profileImage,
 };
 
@@ -59,7 +59,7 @@ const Home = () => {
           <div className="flex flex-col-reverse lg:flex-row items-center justify-between px-6 mx-auto max-w-[900px] lg:max-w-[1170px] w-full">
             {/* -------------------- Left Section (Text) -------------------- */}
             <div className="max-w-xl text-center lg:text-left mt-10">
-              <p className="text-gray-400 text-xl">{homeInfo.position}</p>
+              <p className="text-gray-400 text-lg">{homeInfo.position}</p>
               <h1 className="text-5xl font-bold mt-4">
                 Hello I'm{" "}
                 <span className="text-6xl font-audiowide text-green-400">
