@@ -51,7 +51,7 @@ const Work = () => {
     },
     {
       id: "04",
-      title: "The Royal Kitches",
+      title: "The Royal kitchen",
       description:
         "At Level Up Technology, developed The Royal Kitchen eCommerce website using WordPress, with responsibilities including theme customization, WooCommerce setup, and payment gateway integration to enhance the online shopping experience.",
       tech: ["Angular", "Firebase"],
@@ -134,7 +134,7 @@ const Work = () => {
   const projectNumber = (current + 1).toString().padStart(2, "0");
 
   return (
-    <div className="h-screen overflow-hidden bg-gray-900 text-white flex flex-col items-center justify-start px-4 py-10 md:py-0">
+    <div className="min-h-screen overflow-hidden bg-gray-900 text-white flex flex-col items-center justify-start px-4 py-10 md:py-0">
       <div className="flex flex-col items-center justify-center w-full lg:max-w-[1170px] md:max-w-[900px]">
         {/* ----------------- Category Tabs ------------------ */}
         <div className="flex flex-col md:flex-row md:gap-8 gap-4 my-10 text-center md:text-left">
