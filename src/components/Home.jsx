@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
-import profileImage from "../assets/image/samarth.png";
+import profileImage from "../assets/Image/samarth.png";
 import CountUp from "react-countup";
 
 // ==================== Dynamic Data ====================
