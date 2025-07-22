@@ -1,49 +1,52 @@
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  // -------------------- State to toggle mobile sidebar --------------------
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
+  const linkClass = ({ isActive }) =>
+    isActive
+      ? "text-green-400 border-b-2 border-green-400 pb-1"
+      : "hover:text-green-400 pb-1";
+
   return (
     <header className="bg-gray-900 text-white shadow-md sticky top-0 z-50">
       {/* -------------------- Desktop Header -------------------- */}
       <div className="flex justify-between items-center px-8 py-4 mx-auto md:max-w-[900px] lg:max-w-[1170px]">
-        {/* Logo or Site Name */}
         <h1 className="text-3xl font-bold tracking-wide">Samarth</h1>
 
-        {/* Navigation - Hidden on Mobile */}
         <div className="hidden md:flex items-center space-x-8">
           <nav className="flex space-x-8 text-lg font-medium">
-            <Link to={"/"} className="hover:text-green-400">
+            <NavLink to="/" className={linkClass}>
               Home
-            </Link>
-            <Link to={"/services"} className="hover:text-green-400">
+            </NavLink>
+            <NavLink to="/services" className={linkClass}>
               Services
-            </Link>
-            <Link to={"/work"} className="hover:text-green-400">
+            </NavLink>
+            <NavLink to="/resume" className={linkClass}>
+              Resume
+            </NavLink>
+            <NavLink to="/work" className={linkClass}>
               Work
-            </Link>
-            <Link to={"/contact"} className="hover:text-green-400">
+            </NavLink>
+            <NavLink to="/contact" className={linkClass}>
               Contact
-            </Link>
+            </NavLink>
           </nav>
 
-          {/* Hire Me Button */}
-          <Link
-            to={"/contact"}
+          {/* <NavLink
+            to="/contact"
             className="px-6 py-2 rounded-full bg-green-400 hover:bg-green-600 hover:text-black transition"
           >
             Hire Me
-          </Link>
+          </NavLink> */}
         </div>
 
-        {/* Mobile Menu Icon */}
         <button onClick={toggleSidebar} className="md:hidden text-3xl">
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
@@ -63,45 +66,31 @@ const Header = () => {
         </div>
 
         <nav className="flex flex-col space-y-6 p-6 text-lg">
-          <Link
-            to={"/"}
-            onClick={toggleSidebar}
-            className="hover:text-green-400"
-          >
+          <NavLink to="/" onClick={toggleSidebar} className={linkClass}>
             Home
-          </Link>
-          <Link
-            to={"/services"}
-            onClick={toggleSidebar}
-            className="hover:text-green-400"
-          >
+          </NavLink>
+          <NavLink to="/services" onClick={toggleSidebar} className={linkClass}>
             Services
-          </Link>
-          <Link
-            to={"/work"}
-            onClick={toggleSidebar}
-            className="hover:text-green-400"
-          >
+          </NavLink>
+          <NavLink to="/resume" onClick={toggleSidebar} className={linkClass}>
+            Resume
+          </NavLink>
+          <NavLink to="/work" onClick={toggleSidebar} className={linkClass}>
             Work
-          </Link>
-          <Link
-            to={"/contact"}
-            onClick={toggleSidebar}
-            className="hover:text-green-400"
-          >
+          </NavLink>
+          <NavLink to="/contact" onClick={toggleSidebar} className={linkClass}>
             Contact
-          </Link>
-          <Link
-            to={"/contact"}
+          </NavLink>
+          {/* <NavLink
+            to="/contact"
             onClick={toggleSidebar}
             className="px-4 py-2 rounded-full bg-green-400 hover:bg-green-600 text-center"
           >
             Hire Me
-          </Link>
+          </NavLink> */}
         </nav>
       </div>
 
-      {/* -------------------- Overlay on Mobile when Sidebar is Open -------------------- */}
       {isOpen && (
         <div
           onClick={toggleSidebar}

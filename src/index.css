@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Poppins', sans-serif;
+html, body {
+  @apply h-screen overflow-hidden;
 }
 
+body {
+  /* font-family: 'Poppins', sans-serif; */
+font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Hide scrollbar but allow scroll */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
